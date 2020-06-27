@@ -1,7 +1,7 @@
 # Sudoku-SQL
 SQL solution for 9x9 Sudoku
 
-Here I will describe how to solve the most common soduku (9*9 with 3*3 regions) via Oracle SQL. The main algorithm is pretty simple:
+Here I will describe how to solve the most common [Soduku](https://en.wikipedia.org/wiki/Sudoku) (9x9 with 3x3 regions) via Oracle SQL. The main algorithm is pretty simple:
 
 1. every empty cell is represented by 2^9-1=511,
 2. go through every cell and exclude single digits appearing in the same column, row, region
