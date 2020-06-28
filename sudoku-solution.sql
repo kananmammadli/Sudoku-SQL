@@ -68,10 +68,10 @@ res as (
 			bin_val[any,any] = replace(dec_to_bin(val[cv(rr), cv(cc)],9),'0')+0
 			)
 	)
-select 1, rr, A,B,C,D,E,F,G,H,I from sudoku  -- initial data
+select 'Base', rr, A,B,C,D,E,F,G,H,I from sudoku  -- initial data
 PIVOT (max(val) FOR (cc) IN (1 AS A, 2 AS B, 3 AS C, 4 AS D, 5 AS E, 6 AS F, 7 AS G, 8 AS H, 9 AS I))
 union all
-select 2, rr, A,B,C,D,E,F,G,H,I from res 
+select 'Solved', rr, A,B,C,D,E,F,G,H,I from res 
 PIVOT (max(bin_val), max(val) as v FOR (cc) IN (1 AS A, 2 AS B, 3 AS C, 4 AS D, 5 AS E, 6 AS F, 7 AS G, 8 AS H, 9 AS I))
 order by 1, 2
 ;
